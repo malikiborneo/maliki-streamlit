@@ -1,9 +1,16 @@
 import streamlit as st
+import numpy as np 
+import pandas as pd
+from PIL import Image
+import requests
+import re
+import io
 
-st.title('Streamlit Example')
+import streamlit.components.v1 as components
+import tensorflow as tf
 
-number = st.slider('Select a number', 1, 100, 50)
-st.write('You selected:', number)
+st.title('Reza Maliki Akbar')
+components.html(embed_component['<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="malikiborneo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/malikiborneo?trk=profile-badge">Reza Maliki Akbar</a></div>'],height=310)
 
-if st.button('Say Hello'):
-    st.write('Hello, Streamlit!')
+              
+
