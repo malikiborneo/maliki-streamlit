@@ -7,7 +7,7 @@ projects = [
     {
         'title': 'Business Problem - Reducing Employee Attrition at XYZ Ltd.',
         'thumbnail': 'pictures/proj1.png',
-        'description': 'The problem we are addressing is the current attrition rate of 15% at XYZ Ltd., a large company with 4.000 employees. This high turnover rate is creating operational disruptions and elevating hiring costs, thus impacting business productivity and profits.<br/> The challenge is to identify the reasons behind this attrition and suggest actionable solutions. Aim to reduce the attrition rate from 15% to 10% within a year, by implementing strategies based on data insights. This aligns with XYZ Ltd. business stability goals.',
+        'description': 'The problem we are addressing is the current attrition rate of 15% at XYZ Ltd., a large company with 4.000 employees. This high turnover rate is creating operational disruptions and elevating hiring costs, thus impacting business productivity and profits.&#013; The challenge is to identify the reasons behind this attrition and suggest actionable solutions. Aim to reduce the attrition rate from 15% to 10% within a year, by implementing strategies based on data insights. This aligns with XYZ Ltd. business stability goals.',
         'link' : 'https://docs.google.com/presentation/d/1PmwnqEXnCG6cHHo55-KO8ROMkzI4N4DquAVzv4ajGfk/edit#slide=id.gc6f9e470d_0_37'
     },
     {
