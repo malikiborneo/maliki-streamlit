@@ -115,21 +115,25 @@ def about_page():
 def projects_page():
     st.title("Projects")
      # Display the main grid of projects
-    for i in range(0, len(projects), 3):  # Assuming 3 columns
-        cols = st.columns(3)
-        for j in range(3):
-            if i + j < len(projects):
-                project = projects[i + j]
-                if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
-                    st.session_state.current_project = i + j
-                    display_project_details(i + j)
-                cols[j].image(project['thumbnail'], use_column_width=True)
-                cols[j].write(project['title'])
+    if "current_project" in st.session_state:
+        display_project_details(st.session_state.current_project)
+    else:
+        # Display the main grid of projects
+        for i in range(0, len(projects), 3):  # Assuming 3 columns
+            cols = st.columns(3)
+            for j in range(3):
+                if i + j < len(projects):
+                    project = projects[i + j]
+                    if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
+                        st.session_state.current_project = i + j
+                        display_project_details(i + j)
+                    cols[j].image(project['thumbnail'], use_column_width=True)
+                    cols[j].write(project['title'])
 
 def display_project_details(index):
     project = projects[index]
     st.title(project['title'])
-    st.image(project['thumbnail'], use_column_width=200)
+    st.image(project['thumbnail'], use_column_width=True)
     st.write(project['description'])
     st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)  # Add link to the project
     if st.button("Back to Projects"):
@@ -149,7 +153,3 @@ def certifications_page():
 
 if __name__ == "__main__":
     main()
-    if "current_project" in st.session_state:
-        display_project_details(st.session_state.current_project)
-    else:
-        projects_page()
