@@ -37,7 +37,16 @@ def main():
 def home_page():
     st.title("Welcome to Reza Maliki Akbar's portfolio!")
     st.image("pictures/RezaMalikiAkbar_Photo.png", caption="Maliki", width=150)
-    st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [My commitment to learning took me to the RevoU bootcamp for Full Stack Data Analytics, where I not only completed the program but also earned a full scholarship. Teamwork is close to my heart, and I've spearheaded robotics projects among other initiatives. My diverse experiences range from collaborating with the Indonesian Navy to developing smart vehicles and pioneering in farming. Additionally, I've taken on international projects, like my work on drones in South Korea. Skilled with tools like Matlab and LabView, I can visualize data effectively, and I'm adept at coding in Python and Java. Beyond these, I excel in problem-solving, sharing insights, and leading teams to success. Now, I'm steering my path towards a new ambition: to excel as a data analyst or delve into data science. With my combined expertise in robots, defense, electronics, and the foundational knowledge from RevoU, I'm eager to bring a unique perspective to the data realm.]")
+    # [My commitment to learning took me to the RevoU bootcamp for Full Stack Data Analytics, where I not only completed the program but also earned a full scholarship. Teamwork is close to my heart, and I've spearheaded robotics projects among other initiatives. My diverse experiences range from collaborating with the Indonesian Navy to developing smart vehicles and pioneering in farming. Additionally, I've taken on international projects, like my work on drones in South Korea. Skilled with tools like Matlab and LabView, I can visualize data effectively, and I'm adept at coding in Python and Java. Beyond these, I excel in problem-solving, sharing insights, and leading teams to success. Now, I'm steering my path towards a new ambition: to excel as a data analyst or delve into data science. With my combined expertise in robots, defense, electronics, and the foundational knowledge from RevoU, I'm eager to bring a unique perspective to the data realm.]
+    st.subheader("Hi, I'm Reza Maliki Akbar, you can call me Maliki.")
+
+    st.write("My passion for innovation and technology has led me to diverse experiences, from robotics to data analytics.")
+    
+    st.write("I've collaborated with esteemed institutions like the Indonesian Navy, developed smart vehicles, and ventured into smart farming. My work isn't limited to Indonesia; I've taken on international challenges, such as drone development in South Korea.")
+    
+    st.write("My skills aren't just academic. While I'm proficient with Python, Tableau, and LookerStudio, I also value teamwork, problem-solving, and leadership. I've led teams, shared insights, and always aimed for success.")
+    
+    st.write("Recently, I completed the Full Stack Data Analytics program at RevoU, a notable achievement made even sweeter by earning a full scholarship. Now, I'm setting my sights on a new goal: to make my mark in data analytics and data science. With my diverse background and dedication, I'm excited to bring a fresh perspective to the world of data.")
     st.subheader('Skills & Tools ⚒️')
     
     skill_col_size = 6  # Assuming you want 6 skills per row, adjust as needed
@@ -57,9 +66,9 @@ def home_page():
     soft_skills = [
         'Problem Solving',
         'Critical Thinking',
-        'Analytcal Thinking',
-        'Logical',
-        'Systematical Thinking',
+        'Analytical Thinking',
+        'Logical Thinking',
+        'Systematic Thinking',
         'Teamwork',
         'Collaboration',
         'Communication',
@@ -234,7 +243,7 @@ def certifications_page():
         {"name": "Back-End Application Development", "organization": "Dicoding", "year": "2021"},
         {"name": "Android Developer", "organization": "Dicoding", "year": "2020"},
         {"name": "CCNA Cybersecurity Operations", "organization": "Digitalent Scholarship", "year": "2020"},
-        {"name": "ICSI Certified Network Security Specialist", "year": "2020"},
+        {"name": "ICSI Certified Network Security Specialist", "organization":"ICSI", "year": "2020"},
         {"name": "Fortinet’s Network Security Expert | NSE Network Security 1-2 Associate","organization":"Fortinet",  "year": "2020"},
         {"name": "Microsoft Office Specialist – Microsoft Word 2010", "organization": "Certiport Pearson Vue", "year": "2010"}
     ]
