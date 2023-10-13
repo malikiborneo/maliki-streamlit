@@ -114,7 +114,7 @@ def about_page():
 
 def projects_page():
     st.title("Projects")
-    st.write("_Please double click the button to have better view and performance_")
+    st.write("_[Please double click the button to have better view and performance]_")
     # Display the main grid of projects
     if "current_project" in st.session_state:
         display_project_details(st.session_state.current_project)
@@ -136,7 +136,7 @@ def projects_page():
 
 def display_project_details(index):
     project = projects[index]
-    st.title(project['title'])
+    st.subheader(project['title'])
     st.image(project['thumbnail'], use_column_width=True)
     st.write(project['description'])
     # Check if 'link' key exists before trying to display it
