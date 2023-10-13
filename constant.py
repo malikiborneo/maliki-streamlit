@@ -8,36 +8,36 @@ projects = [
         'title': 'Project 1',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 1...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     },
     {
         'title': 'Project 2',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 2...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     },
     {
         'title': 'Project 3',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 3...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     },
     {
         'title': 'Project 4',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 4...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     },
     {
         'title': 'Project 5',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 5...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     },
     {
         'title': 'Project 6',
         'thumbnail': 'pictures/proj1.png',
         'description': 'Detailed description of Project 6...',
-        'link:' : 'https://www.google.com'
+        'link:' : 'https://www.google.com/'
     }
 ]

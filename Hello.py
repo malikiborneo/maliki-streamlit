@@ -135,11 +135,14 @@ def display_project_details(index):
     st.title(project['title'])
     st.image(project['thumbnail'], use_column_width=True)
     st.write(project['description'])
-    st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)  # Add link to the project
+    # Check if 'link' key exists before trying to display it
+    if 'link' in project:
+        st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)
+    
     if st.button("Back to Projects"):
         del st.session_state.current_project
         projects_page()
-
+        
 def certifications_page():
     st.title("Certifications")
     st.header("Introduction")
