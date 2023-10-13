@@ -78,9 +78,8 @@ def about_page():
     #st.table(education_df)
     table_html = education_df.to_html(index=False)
     st.markdown(table_html, unsafe_allow_html=True)
-
     # Display the DataFrame in Streamlit
-    st.write(education_df)
+    #st.write(education_df)
     st.header("Experience")
     st.write("[Professional experience, internships, roles, responsibilities, etc.]")
     st.header("Other Details")
