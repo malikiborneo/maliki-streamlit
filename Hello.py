@@ -65,13 +65,17 @@ def about_page():
     st.header("Introduction")
     st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
     st.header("Education 📖")
-    fig = go.Figure(data=[go.Table(
-    header=dict(values=list(info['edu'].columns),
-                fill_color='paleturquoise',
-                align='left',height=65,font_size=20),
-    cells=dict(values=info['edu'].transpose().values.tolist(),
-               fill_color='lavender',
-               align='left',height=40,font_size=15))])
+    education_data = {
+        'Level': ['Vocational High School', 'Associate Degree', 'Bachelor of Engineering', 'Research Exchange (Non-degree)', 'Master'],
+        'Institution': ['SMK Negeri 1 Cimahi (STM Negeri Pembangunan Bandung)', 'Politeknik Manufaktur Negeri Bandung (Politeknik Mekanik Swiss-ITB)', 'Institut Teknologi Sepuluh Nopember', 'Kyuwngoon University', 'Monash University'],
+        'Field of Study': ['Software Engineering', 'Manufacturing Automation and Mechatronics Engineering', 'Engineering/Applied Physics', 'Aeronautical Engineering', 'Cybersecurity'],
+        'Year of Academic': ['2010-2014', '2013-2016', '2017-2020', '2019', '2023-2025']
+    }
+
+    education_df = pd.DataFrame(education_data)
+
+    # Display the DataFrame in Streamlit
+    st.write(education_df)
     st.header("Experience")
     st.write("[Professional experience, internships, roles, responsibilities, etc.]")
     st.header("Other Details")
