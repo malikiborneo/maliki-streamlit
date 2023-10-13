@@ -1,3 +1,4 @@
+from constant import *
 import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components  
@@ -31,33 +32,20 @@ def main():
 def home_page():
     #st.title("Welcome to My Portfolio!")
     st.write("Hi, I'm [Your Name]. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
-    skills = [
-        {"name": "Python", "icon": "fab fa-python"},
-        {"name": "Data Analysis", "icon": "fas fa-chart-bar"},
-        {"name": "Machine Learning", "icon": "fas fa-brain"},
-        {"name": "Database", "icon": "fas fa-database"},
-        # Add more skills and their corresponding icons here
-    ]
+    st.subheader('Skills & Tools ⚒️')
     
-    cols = st.columns(6)
-    
-    for i, skill in enumerate(skills):
-        with cols[i]:
-            st.markdown(f"""
-            <div class="skill-icon" style="background-color: #f0f0f0; padding: 20px; border-radius: 5px; text-align: center;">
-                <i class="{skill['icon']}" style="font-size: 24px;"></i><br>
-                {skill['name']}
-            </div>
-            """, unsafe_allow_html=True)
-    
-    # Add CSS for hover effect
-    st.markdown("""
-    <style>
-        .skill-icon:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+    skill_col_size = 6  # Assuming you want 6 skills per row, adjust as needed
+    rows, cols = len(info['skills']) // skill_col_size, skill_col_size
+    skills = iter(info['skills'])
+    if len(info['skills']) % skill_col_size != 0:
+        rows += 1
+    for x in range(rows):
+        columns = st.columns(skill_col_size)
+        for index_ in range(skill_col_size):
+            try:
+                columns[index_].button(next(skills))
+            except StopIteration:
+                break
  #  uploaded_file = st.file_uploader("Upload a CSV/Excel file to visualize", type=["csv", "xlsx"])
 # if uploaded_file:
 #        if uploaded_file.name.endswith('.csv'):
