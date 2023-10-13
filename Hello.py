@@ -114,9 +114,13 @@ def about_page():
 
 def projects_page():
     st.title("Projects")
-     # Display the main grid of projects
-    if "current_project" in st.session_state:
-        display_project_details(st.session_state.current_project)
+   # Check if we're opening a project's details
+    query_params = st.experimental_get_query_params()
+    project_id = query_params.get("project", None)
+    
+    if project_id:
+        index = int(project_id[0])
+        display_project_details(index)
     else:
         # Display the main grid of projects
         for i in range(0, len(projects), 3):  # Assuming 3 columns
@@ -124,25 +128,26 @@ def projects_page():
             for j in range(3):
                 if i + j < len(projects):
                     project = projects[i + j]
-                    if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
-                        st.session_state.current_project = i + j
-                        display_project_details(i + j)
-                    cols[j].image(project['thumbnail'], use_column_width=True)
+                    project_link = f'<a href="?project={i+j}"><img src="{project["thumbnail"]}" style="width: 100%; cursor: pointer;"></a>'
+                    cols[j].markdown(project_link, unsafe_allow_html=True)
                     cols[j].write(project['title'])
+
 
 def display_project_details(index):
     project = projects[index]
     st.title(project['title'])
     st.image(project['thumbnail'], use_column_width=True)
     st.write(project['description'])
+    
     # Check if 'link' key exists before trying to display it
     if 'link' in project:
         st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)
     
     if st.button("Back to Projects"):
-        del st.session_state.current_project
+        # Reset the query params to go back to the projects grid
+        st.experimental_set_query_params()
         projects_page()
-        
+
 def certifications_page():
     st.title("Certifications")
     st.header("Introduction")
