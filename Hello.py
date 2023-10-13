@@ -10,16 +10,13 @@ def main():
     page = st.sidebar.radio("Go to", ["Home", "About", "Skills", "Projects", "Certifications", "Blog", "Contact"])
 
     # LinkedIn Embed
-    components.html("""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>""")
-    linkedin = components.html("""<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="malikiborneo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/malikiborneo?trk=profile-badge">Reza Maliki Akbar</a></div>""")
-
-    st.sidebar.markdown(linkedin, unsafe_allow_html=True)
+    #components.html("""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>""")
+    #st.sidebar.markdown(components.html("""<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="malikiborneo" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/malikiborneo?trk=profile-badge">Reza Maliki Akbar</a></div>"""), unsafe_allow_html=True)
     
     # Sidebar Links
-    st.sidebar.markdown('[GitHub](https://github.com/your_username)')
-    st.sidebar.markdown('[Stack Overflow](https://stackoverflow.com/users/your_user_id)')
-    st.sidebar.markdown('[Medium](https://medium.com/@your_username)')
-    st.sidebar.markdown('Email: your_email@example.com')
+    st.sidebar.markdown('[GitHub](https://github.com/malikiborneo)')
+    st.sidebar.markdown('[LinkedIn](https://dk.linkedin.com/in/malikiborneo/)')
+    st.sidebar.markdown('E-mail: rezamaliki.akbar@gmail.com')
 
     # Page Selection
     if page == "Home":
@@ -32,16 +29,42 @@ def main():
     st.write("© 2023 Reza Maliki Akbar")
 
 def home_page():
-    st.title("Welcome to My Portfolio!")
+    #st.title("Welcome to My Portfolio!")
     st.write("Hi, I'm [Your Name]. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
+    skills = [
+        {"name": "Python", "icon": "fab fa-python"},
+        {"name": "Data Analysis", "icon": "fas fa-chart-bar"},
+        {"name": "Machine Learning", "icon": "fas fa-brain"},
+        {"name": "Database", "icon": "fas fa-database"},
+        # Add more skills and their corresponding icons here
+    ]
     
-    uploaded_file = st.file_uploader("Upload a CSV/Excel file to visualize", type=["csv", "xlsx"])
-    if uploaded_file:
-        if uploaded_file.name.endswith('.csv'):
-            data = pd.read_csv(uploaded_file)
-        else:
-            data = pd.read_excel(uploaded_file)
-        st.write(data)  # Display the uploaded dataframe
+    cols = st.columns(6)
+    
+    for i, skill in enumerate(skills):
+        with cols[i]:
+            st.markdown(f"""
+            <div class="skill-icon" style="background-color: #f0f0f0; padding: 20px; border-radius: 5px; text-align: center;">
+                <i class="{skill['icon']}" style="font-size: 24px;"></i><br>
+                {skill['name']}
+            </div>
+            """, unsafe_allow_html=True)
+    
+    # Add CSS for hover effect
+    st.markdown("""
+    <style>
+        .skill-icon:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+ #  uploaded_file = st.file_uploader("Upload a CSV/Excel file to visualize", type=["csv", "xlsx"])
+# if uploaded_file:
+#        if uploaded_file.name.endswith('.csv'):
+ #           data = pd.read_csv(uploaded_file)
+  #      else:
+   #         data = pd.read_excel(uploaded_file)
+    #    st.write(data)  # Display the uploaded dataframe
 
 def about_page():
     st.title("About Me")
