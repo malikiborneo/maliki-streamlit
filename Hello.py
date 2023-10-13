@@ -5,10 +5,10 @@ import streamlit.components.v1 as components
 
 # Define the main function
 def main():
-    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' ,layout="wide",page_icon='👨‍🔬')
+    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' ,layout="wide",page_icon='👷')
     # Sidebar
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["Home", "About", "Skills", "Projects", "Certifications", "Blog", "Contact"])
+    page = st.sidebar.radio("Go to", ["Home", "About", "Projects", "Certifications"])
 
     # LinkedIn Embed
     #components.html("""<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>""")
@@ -30,8 +30,8 @@ def main():
     st.write("© 2023 Reza Maliki Akbar")
 
 def home_page():
-    #st.title("Welcome to My Portfolio!")
-    st.write("Hi, I'm [Your Name]. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
+    st.title("Welcome to Reza Maliki Akbar's portfolio!")
+    st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
     st.subheader('Skills & Tools ⚒️')
     
     skill_col_size = 6  # Assuming you want 6 skills per row, adjust as needed
