@@ -114,6 +114,7 @@ def about_page():
 
 def projects_page():
     st.title("Projects")
+    st.write("_Please double click the button to have better view and performance_")
     # Display the main grid of projects
     if "current_project" in st.session_state:
         display_project_details(st.session_state.current_project)
