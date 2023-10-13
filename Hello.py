@@ -75,6 +75,7 @@ def about_page():
     education_df = pd.DataFrame(education_data)
     #Reverse order, descending education
     education_df = education_df.iloc[::-1].reset_index(drop=True)
+    st.table(education_df)
 
     # Display the DataFrame in Streamlit
     st.write(education_df)
