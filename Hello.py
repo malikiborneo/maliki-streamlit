@@ -129,8 +129,9 @@ def projects_page():
 def display_project_details(index):
     project = projects[index]
     st.title(project['title'])
-    st.image(project['thumbnail'], use_column_width=True)
+    st.image(project['thumbnail'], use_column_width=200)
     st.write(project['description'])
+    st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)  # Add link to the project
     if st.button("Back to Projects"):
         del st.session_state.current_project
         projects_page()
