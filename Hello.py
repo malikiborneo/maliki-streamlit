@@ -207,9 +207,7 @@ def display_project_details(index):
     st.subheader(project['title'])
     st.image(project['thumbnail'], use_column_width=True)
     st.write(project['description'])
-    # Check if 'link' key exists before trying to display it
-    if 'link' in project:
-        st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)
+    st.markdown(f"[View Project]({project['link']})", unsafe_allow_html=True)
     
     if st.button("Back to Projects"):
         del st.session_state.current_project
