@@ -3,3 +3,10 @@ numpy
 pandas
 pydeck
 streamlit
+graphviz
+matplotlib
+plotly==5.4.0
+requests
+streamlit_timeline
+streamlit-player
+typing-extensions

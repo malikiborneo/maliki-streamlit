@@ -1,7 +1,8 @@
 from constant import *
 import streamlit as st
 import pandas as pd
-import streamlit.components.v1 as components  
+import streamlit.components.v1 as components 
+import plotly.graph_objects as go 
 
 # Define the main function
 def main():
@@ -35,6 +36,7 @@ def main():
 
 def home_page():
     st.title("Welcome to Reza Maliki Akbar's portfolio!")
+    st.image("/pictures/RezaMalikiAkbar_Photo.jpg", caption="Maliki", use_column_width=True)
     st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
     st.subheader('Skills & Tools ⚒️')
     
@@ -62,8 +64,14 @@ def about_page():
     st.title("About Me")
     st.header("Introduction")
     st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
-    st.header("Education")
-    st.write("[Details about your educational background, degrees, institutions, etc.]")
+    st.header("Education 📖")
+    fig = go.Figure(data=[go.Table(
+    header=dict(values=list(info['edu'].columns),
+                fill_color='paleturquoise',
+                align='left',height=65,font_size=20),
+    cells=dict(values=info['edu'].transpose().values.tolist(),
+               fill_color='lavender',
+               align='left',height=40,font_size=15))])
     st.header("Experience")
     st.write("[Professional experience, internships, roles, responsibilities, etc.]")
     st.header("Other Details")
