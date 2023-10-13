@@ -115,16 +115,19 @@ def about_page():
 def projects_page():
     st.title("Projects")
      # Display the main grid of projects
+    # Display the main grid of projects
     for i in range(0, len(projects), 3):  # Assuming 3 columns
         cols = st.columns(3)
         for j in range(3):
             if i + j < len(projects):
                 project = projects[i + j]
-                if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
-                    st.session_state.current_project = i + j
-                    display_project_details(i + j)
-                cols[j].image(project['thumbnail'], use_column_width=True)
-                cols[j].write(project['title'])
+                image_html = f"""
+                <a href="#" style="display: block; border: 1px solid #f0f0f0; border-radius: 4px;">
+                    <img src="{project['thumbnail']}" style="max-width: 100%; border-radius: 4px;">
+                    <p style="text-align: center; margin: 0;">{project['title']}</p>
+                </a>
+                """
+                cols[j].markdown(image_html, unsafe_allow_html=True)
 
 def display_project_details(index):
     project = projects[index]
