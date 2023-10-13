@@ -209,13 +209,13 @@ def display_project_details(index):
 def certifications_page():
     st.title("Certifications")
     certifications = [
-        {"name": "RevoU Full Stack Data Analytics", "year": "2023"},
-        {"name": "USINDO GRASP Critical Thinking & Digital Literacy Course", "year": "2023"},
+        {"name": "RevoU Full Stack Data Analytics", "organization":"RevoU", "year": "2023"},
+        {"name": "USINDO GRASP Critical Thinking & Digital Literacy Course", "organization":"USINDO", "year": "2023"},
         {"name": "Deep Learning", "organization": "Nvidia Deep Learning Institute", "year": "2022"},
         {"name": "CCNA Network Engineer", "organization": "Digitalent Scholarship", "year": "2022"},
         {"name": "Scrum Fundamentals Certified", "organization": "SCRUMstudy", "year": "2021"},
-        {"name": "Agile Development Using Scrum Framework", "organization": "Sanberode", "year": "2021"},
-        {"name": "AWS Cloud Foundations and Developing", "year": "2021"},
+        {"name": "Agile Development Using Scrum Framework", "organization": "Sanbercode", "year": "2021"},
+        {"name": "AWS Cloud Foundations and Developing", "organization":"Amazon Web Services", "year": "2021"},
         {"name": "Certified Data Scientist (R Language)", "organization": "DQLab", "year": "2021"},
         {"name": "R Fundamental for Data Science", "organization": "DQLab", "year": "2021"},
         {"name": "Data Visualization in Data Science using R", "organization": "DQLab", "year": "2021"},
@@ -235,7 +235,7 @@ def certifications_page():
         {"name": "Android Developer", "organization": "Dicoding", "year": "2020"},
         {"name": "CCNA Cybersecurity Operations", "organization": "Digitalent Scholarship", "year": "2020"},
         {"name": "ICSI Certified Network Security Specialist", "year": "2020"},
-        {"name": "Fortinet’s Network Security Expert | NSE Network Security 1-2 Associate", "year": "2020"},
+        {"name": "Fortinet’s Network Security Expert | NSE Network Security 1-2 Associate","organization":"Fortinet",  "year": "2020"},
         {"name": "Microsoft Office Specialist – Microsoft Word 2010", "organization": "Certiport Pearson Vue", "year": "2010"}
     ]
 
