@@ -37,7 +37,7 @@ def main():
 def home_page():
     st.title("Welcome to Reza Maliki Akbar's portfolio!")
     st.image("pictures/RezaMalikiAkbar_Photo.png", caption="Maliki", width=150)
-    st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
+    st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [My commitment to learning took me to the RevoU bootcamp for Full Stack Data Analytics, where I not only completed the program but also earned a full scholarship. Teamwork is close to my heart, and I've spearheaded robotics projects among other initiatives. My diverse experiences range from collaborating with the Indonesian Navy to developing smart vehicles and pioneering in farming. Additionally, I've taken on international projects, like my work on drones in South Korea. Skilled with tools like Matlab and LabView, I can visualize data effectively, and I'm adept at coding in Python and Java. Beyond these, I excel in problem-solving, sharing insights, and leading teams to success. Now, I'm steering my path towards a new ambition: to excel as a data analyst or delve into data science. With my combined expertise in robots, defense, electronics, and the foundational knowledge from RevoU, I'm eager to bring a unique perspective to the data realm.]")
     st.subheader('Skills & Tools ⚒️')
     
     skill_col_size = 6  # Assuming you want 6 skills per row, adjust as needed
@@ -88,8 +88,6 @@ def home_page():
 
 def about_page():
     st.title("About Me")
-    st.header("Introduction")
-    st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
     st.header("Education 📖")
     education_data = {
         'Level': ['Vocational High School', 'Associate Degree', 'Bachelor of Engineering', 'Research Exchange (Non-degree)', 'Master'],
