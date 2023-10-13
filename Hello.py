@@ -36,7 +36,7 @@ def main():
 
 def home_page():
     st.title("Welcome to Reza Maliki Akbar's portfolio!")
-    st.image("/pictures/RezaMalikiAkbar_Photo.jpg", caption="Maliki", use_column_width=True)
+    st.image("pictures/RezaMalikiAkbar_Photo.png", caption="Maliki", use_column_width=True)
     st.write("Hi, I'm Reza Maliki Akbar, you can call me Maliki. [Your brief introduction here, such as what you do, your major accomplishments, etc.]")
     st.subheader('Skills & Tools ⚒️')
     
