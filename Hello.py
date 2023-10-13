@@ -124,7 +124,7 @@ def projects_page():
             for j in range(3):
                 if i + j < len(projects):
                     project = projects[i + j]
-                    if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
+                    if cols[j].button("Go to Project", key=f"img_{i+j}"):  # Empty button as placeholder for image
                         st.session_state.current_project = i + j
                         display_project_details(i + j)
                     cols[j].image(project['thumbnail'], use_column_width=True)
