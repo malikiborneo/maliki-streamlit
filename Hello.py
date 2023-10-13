@@ -57,6 +57,8 @@ def home_page():
     soft_skills = [
         'Problem Solving',
         'Critical Thinking',
+        'Analytcal Thinking',
+        'Logical and Systematical Thinking',
         'Teamwork & Collaboration',
         'Communication',
         'Adaptability',
@@ -64,12 +66,16 @@ def home_page():
         'Leadership'
     ]
 
-    # Since we've added another skill, let's dynamically determine the number of columns
     num_columns = len(soft_skills)
     columns = st.columns(num_columns)
 
     for i, skill in enumerate(soft_skills):
-        columns[i].write(skill)
+        skill_html = f"""
+        <div style="border: 1px solid #f0f0f0; padding: 8px; border-radius: 4px; text-align: center;">
+            {skill}
+        </div>
+        """
+    columns[i].markdown(skill_html, unsafe_allow_html=True)
  #  uploaded_file = st.file_uploader("Upload a CSV/Excel file to visualize", type=["csv", "xlsx"])
 # if uploaded_file:
 #        if uploaded_file.name.endswith('.csv'):
