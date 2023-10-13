@@ -114,7 +114,8 @@ def about_page():
 
 def projects_page():
     st.title("Projects")
-   # Check if we're opening a project's details
+    
+    # Check if we're opening a project's details
     query_params = st.experimental_get_query_params()
     project_id = query_params.get("project", None)
     
@@ -132,7 +133,6 @@ def projects_page():
                     cols[j].markdown(project_link, unsafe_allow_html=True)
                     cols[j].write(project['title'])
 
-
 def display_project_details(index):
     project = projects[index]
     st.title(project['title'])
@@ -147,7 +147,7 @@ def display_project_details(index):
         # Reset the query params to go back to the projects grid
         st.experimental_set_query_params()
         projects_page()
-
+            
 def certifications_page():
     st.title("Certifications")
     st.header("Introduction")
