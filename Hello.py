@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 # Define the main function
 def main():
-    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' ,layout="wide", page_icon="👷🏻")
+    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' , layout="wide", page_icon="👷")
     # Sidebar
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "About", "Projects", "Certifications"])
@@ -114,14 +114,26 @@ def about_page():
 
 def projects_page():
     st.title("Projects")
-    st.header("Introduction")
-    st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
-    st.header("Education")
-    st.write("[Details about your educational background, degrees, institutions, etc.]")
-    st.header("Experience")
-    st.write("[Professional experience, internships, roles, responsibilities, etc.]")
-    st.header("Other Details")
-    st.write("[Any other information you'd like to share, such as awards, languages spoken, etc.]")
+     # Display the main grid of projects
+    for i in range(0, len(projects), 3):  # Assuming 3 columns
+        cols = st.columns(3)
+        for j in range(3):
+            if i + j < len(projects):
+                project = projects[i + j]
+                if cols[j].button("", key=f"img_{i+j}"):  # Empty button as placeholder for image
+                    st.session_state.current_project = i + j
+                    display_project_details(i + j)
+                cols[j].image(project['thumbnail'], use_column_width=True)
+                cols[j].write(project['title'])
+
+def display_project_details(index):
+    project = projects[index]
+    st.title(project['title'])
+    st.image(project['thumbnail'], use_column_width=True)
+    st.write(project['description'])
+    if st.button("Back to Projects"):
+        del st.session_state.current_project
+        projects_page()
 
 def certifications_page():
     st.title("Certifications")
@@ -135,4 +147,7 @@ def certifications_page():
     st.write("[Any other information you'd like to share, such as awards, languages spoken, etc.]")
 
 if __name__ == "__main__":
-    main()
+    if "current_project" in st.session_state:
+        display_project_details(st.session_state.current_project)
+    else:
+        projects_page()
