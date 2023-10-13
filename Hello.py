@@ -72,7 +72,7 @@ def about_page():
         'Year of Academic': ['2010-2014', '2013-2016', '2017-2020', '2019', '2023-2025']
     }
 
-    #education_df = pd.DataFrame(education_data)
+    education_df = pd.DataFrame(education_data)
     #Reverse order, descending education
     education_df = education_df.iloc[::-1].reset_index(drop=True)
 
