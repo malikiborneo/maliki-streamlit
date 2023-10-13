@@ -24,6 +24,10 @@ def main():
         home_page()
     elif page == "About":
         about_page()
+    elif page == "Projects":
+        projects_page()
+    elif page == "Certifications":
+        certifications_page()
     # ... other pages will go here
 
     # Footer
@@ -56,6 +60,29 @@ def home_page():
 
 def about_page():
     st.title("About Me")
+    st.header("Introduction")
+    st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
+    st.header("Education")
+    st.write("[Details about your educational background, degrees, institutions, etc.]")
+    st.header("Experience")
+    st.write("[Professional experience, internships, roles, responsibilities, etc.]")
+    st.header("Other Details")
+    st.write("[Any other information you'd like to share, such as awards, languages spoken, etc.]")
+
+
+def projects_page():
+    st.title("Projects")
+    st.header("Introduction")
+    st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
+    st.header("Education")
+    st.write("[Details about your educational background, degrees, institutions, etc.]")
+    st.header("Experience")
+    st.write("[Professional experience, internships, roles, responsibilities, etc.]")
+    st.header("Other Details")
+    st.write("[Any other information you'd like to share, such as awards, languages spoken, etc.]")
+
+def certifications_page():
+    st.title("Certifications")
     st.header("Introduction")
     st.write("[A detailed introduction about yourself, your passion, hobbies, etc.]")
     st.header("Education")
