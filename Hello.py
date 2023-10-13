@@ -75,7 +75,7 @@ def home_page():
             {softskill}
         </div>
         """
-    columns[i].markdown(softskill_html, unsafe_allow_html=True)
+        columns[i].markdown(softskill_html, unsafe_allow_html=True)
  #  uploaded_file = st.file_uploader("Upload a CSV/Excel file to visualize", type=["csv", "xlsx"])
 # if uploaded_file:
 #        if uploaded_file.name.endswith('.csv'):
