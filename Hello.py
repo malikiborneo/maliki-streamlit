@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 
 # Define the main function
 def main():
-    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' ,layout="wide",page_icon='👷')
+    st.set_page_config(page_title='Reza Maliki Akbar\'s portfolio' ,layout="wide", page_icon='👷')
     # Sidebar
     st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "About", "Projects", "Certifications"])
