@@ -19,6 +19,7 @@ def main():
     st.sidebar.markdown('[GitHub](https://github.com/malikiborneo)')
     st.sidebar.markdown('[LinkedIn](https://dk.linkedin.com/in/malikiborneo/)')
     st.sidebar.markdown('E-mail: rezamaliki.akbar@gmail.com')
+    st.sidebar.markdown('[Air Quality Data Analytics Showcase](https://maliki-airquality.streamlit.app/)')
 
     # Page Selection
     if page == "Home":
